@@ -36,6 +36,10 @@ steps:
  
 - script: |
     git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' cp --parents -r '{}' $(Build.BinariesDirectory)
+  
+    mkdir -p $(Build.BinariesDirectory)/cicd-scripts
+    cp $(Build.Repository.LocalPath)/cicd-scripts/*.* $(Build.BinariesDirectory)/cicd-scripts
+    
   displayName: 'Get Changes'
 
 - task: ArchiveFiles@2
