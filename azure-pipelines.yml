@@ -34,9 +34,8 @@ steps:
 - script: git checkout main
   displayName: 'Get Latest Branch'
  
- - script: |
+- script: |
     git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' cp --parents -r '{}' $(Build.BinariesDirectory)
- 
   displayName: 'Get Changes'
 
 - task: ArchiveFiles@2
