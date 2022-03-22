@@ -5,7 +5,7 @@ trigger:
 
 # Specify the OS for the agent
 pool:
-  name: Hosted Ubuntu 1804
+    vmImage: 'ubuntu-latest'
 
 # Install Python. The version must match the version on the Databricks cluster.
 steps:
